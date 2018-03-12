@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 public class DetailViewActivity extends Activity {
 
-    private EditText nameField, emailField;
+    private EditText nameField, emailField,businessNumberField,primaryBusinessField,addressField,provinceField;
     Contact receivedPersonInfo;
 
     @Override
@@ -17,12 +17,20 @@ public class DetailViewActivity extends Activity {
         setContentView(R.layout.activity_detail_view);
         receivedPersonInfo = (Contact)getIntent().getSerializableExtra("Contact");
 
-        nameField = (EditText) findViewById(R.id.name);
-        emailField = (EditText) findViewById(R.id.email);
+        nameField = (EditText) findViewById(R.id.nameDetail);
+        emailField = (EditText) findViewById(R.id.emailDetail);
+        businessNumberField=(EditText) findViewById(R.id.businessNumberDetail);
+        primaryBusinessField=(EditText) findViewById(R.id.primaryBusinessDetail);
+        addressField=(EditText) findViewById(R.id.addressDetail);
+        provinceField=(EditText) findViewById(R.id.provinceDetail);
 
         if(receivedPersonInfo != null){
             nameField.setText(receivedPersonInfo.name);
             emailField.setText(receivedPersonInfo.email);
+            businessNumberField.setText(Integer.toString(receivedPersonInfo.businessNumber));
+            primaryBusinessField.setText(receivedPersonInfo.primaryBusiness);
+            addressField.setText(receivedPersonInfo.address);
+            provinceField.setText(receivedPersonInfo.province);
         }
     }
 
