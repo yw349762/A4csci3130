@@ -12,10 +12,10 @@
                     ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
                 },
               "Business Number":{
-                ".validate":"newData.isNumber() && newData.val().length==9"
+                ".validate":"newData.isNumber() && (newData.val()<1000000000 && newData.val()>99999999)"
               },
               "Primary Business":{
-                ".validate":"newData.isString() && (newData.val()=='Fisher'||newData.val()=='Distributor'||newData.val()=='Processor'||newData.val()=='Fish Monger')"
+                ".validate":"newData.isString()&&newData.val().matches(/^Fisher/)||newData.val().matches(/^Distributor/)||newData.val().matches(/^Processor/)||newData.val().matches(/^Fish Monger/)"
               },
               "Address:":{
                 ".validate":"newData.isString() && newData.val().length < 50"

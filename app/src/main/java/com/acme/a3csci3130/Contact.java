@@ -1,7 +1,6 @@
 package com.acme.a3csci3130;
 
 import com.google.firebase.database.Exclude;
-import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -17,8 +16,8 @@ public class Contact implements Serializable {
     public  String uid;
     public  String name;
     public  String email;
-    public int businessNumber;
-    public String primaryBusiness;
+    public int businessnumber;
+    public String primarybusiness;
     public String address;
     public String province;
 
@@ -28,12 +27,12 @@ public class Contact implements Serializable {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Contact(String uid, String name, String email,int businessNumber,String primaryBusiness,String address,String province){
+    public Contact(String uid, String name, String email, int businessnumber, String primarybusiness, String address, String province){
         this.uid = uid;
         this.name = name;
         this.email = email;
-        this.businessNumber=businessNumber;
-        this.primaryBusiness=primaryBusiness;
+        this.businessnumber = businessnumber;
+        this.primarybusiness = primarybusiness;
         this.address=address;
         this.province=province;
 
@@ -45,8 +44,8 @@ public class Contact implements Serializable {
         result.put("uid", uid);
         result.put("name", name);
         result.put("email", email);
-        result.put("Business Number", businessNumber);
-        result.put("Primary Business", primaryBusiness);
+        result.put("Business Number", businessnumber);
+        result.put("Primary Business", primarybusiness);
         result.put("Address", address);
         result.put("Province", province);
 
