@@ -5,12 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class CreateContactAcitivity extends Activity {
 
-    private Button submitButton;
+    private Button createButton;
     private EditText nameField, emailField,businessNumberField,primaryBusinessField,addressField,provinceField;
     private MyApplicationData appState;
+    String theId;
 
 
     @Override
@@ -20,18 +26,30 @@ public class CreateContactAcitivity extends Activity {
         //Get the app wide shared variables
         appState = ((MyApplicationData) getApplicationContext());
 
-        submitButton = (Button) findViewById(R.id.createButton);
+        createButton = (Button) findViewById(R.id.createButton);
         nameField = (EditText) findViewById(R.id.name);
         emailField = (EditText) findViewById(R.id.email);
         businessNumberField=(EditText) findViewById(R.id.businessnumber);
         primaryBusinessField=(EditText) findViewById(R.id.primarybusiness);
         addressField=(EditText) findViewById(R.id.address);
         provinceField=(EditText) findViewById(R.id.province);
+
+
+
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitInfoButton(v);
+
+            }
+        });
+
     }
 
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
-        String personID = appState.firebaseReference.push().getKey();
+        final String personID = appState.firebaseReference.push().getKey();
+        theId=personID;
         String name = nameField.getText().toString();
         String email = emailField.getText().toString();
         int businessNumber = Integer.parseInt(businessNumberField.getText().toString());
@@ -41,7 +59,6 @@ public class CreateContactAcitivity extends Activity {
         Contact person = new Contact(personID, name, email,businessNumber,primaryBusiness,address,province);
 
         appState.firebaseReference.child(personID).setValue(person);
-
         finish();
 
     }
