@@ -331,13 +331,7 @@ public class MainActivityTest {
 
         onView(withId(R.id.createButton)).perform(click());
 
-
-
-
-
     }
-
-
 
 
     private static Matcher<View> childAtPosition(
