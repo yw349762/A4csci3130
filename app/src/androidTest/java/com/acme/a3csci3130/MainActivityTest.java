@@ -52,6 +52,201 @@ public class MainActivityTest {
         onView(withId(R.id.deleteButtonMain)).perform(click());
         onView(withId(R.id.infoText)).check(matches(withText("Please select a user from list")));
     }
+    @Test
+    public void testRulesname() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("B"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("Bob@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456789"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fisher"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+
+    @Test
+    public void testRulesname1() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("Bob"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("Bob@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456789"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fisher"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+
+
+    @Test
+    public void testEmail() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("Alice"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("alicedal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456789"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fisher"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+    @Test
+    public void testEmail1() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("Alice"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("alice@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456789"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fisher"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+
+
+
+    @Test
+    public void testBusNumber() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("Emma"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("Emma@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("12345"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fisher"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+
+    @Test
+    public void testBusNumber1() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("Emma"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("Emma@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456789"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fisher"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+
+
+    @Test
+    public void testPrmNumber() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("David"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("David@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456789"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fis"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+
+    @Test
+    public void testPrmNumber1() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("David"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("David@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456789"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fish Monger"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+    }
+
 
     @Test
     public void testCreate() {
@@ -81,7 +276,7 @@ public class MainActivityTest {
                 .inAdapterView(allOf(withId(R.id.listView),childAtPosition(
                         withClassName(is("android.support.constraint.ConstraintLayout")),
                         2)))
-                .atPosition(3);
+                .atPosition(1);
         textView.perform(click());
 
 
@@ -109,6 +304,34 @@ public class MainActivityTest {
                 .atPosition(3);
         textView1.perform(click());
         onView(withId(R.id.deleteButton)).perform(click());
+
+
+
+    }
+    @Test
+    public void testRules() {
+        onView(withId(R.id.createButtonMain)).perform(click());
+
+        onView(withId(R.id.name)).
+                perform(typeText("Bob"),closeSoftKeyboard());
+        onView(withId(R.id.email)).
+                perform(typeText("Bob@dal.ca"),closeSoftKeyboard());
+
+        onView(withId(R.id.businessnumber)).
+                perform(typeText("123456"),closeSoftKeyboard());
+
+        onView(withId(R.id.primarybusiness)).
+                perform(typeText("Fisher"),closeSoftKeyboard());
+
+        onView(withId(R.id.address)).
+                perform(typeText("501 3rd"),closeSoftKeyboard());
+
+        onView(withId(R.id.province)).
+                perform(typeText("NS"),closeSoftKeyboard());
+
+        onView(withId(R.id.createButton)).perform(click());
+
+
 
 
 

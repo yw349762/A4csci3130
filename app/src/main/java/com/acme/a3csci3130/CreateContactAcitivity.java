@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,7 +17,9 @@ public class CreateContactAcitivity extends Activity {
     private Button createButton;
     private EditText nameField, emailField,businessNumberField,primaryBusinessField,addressField,provinceField;
     private MyApplicationData appState;
-    String theId;
+    private String theId;
+    private ListView thelist;
+
 
 
     @Override
@@ -33,6 +36,7 @@ public class CreateContactAcitivity extends Activity {
         primaryBusinessField=(EditText) findViewById(R.id.primarybusiness);
         addressField=(EditText) findViewById(R.id.address);
         provinceField=(EditText) findViewById(R.id.province);
+        thelist= (ListView) findViewById(R.id.listView);
 
 
 
@@ -47,6 +51,9 @@ public class CreateContactAcitivity extends Activity {
     }
 
     public void submitInfoButton(View v) {
+
+
+
         //each entry needs a unique ID
         final String personID = appState.firebaseReference.push().getKey();
         theId=personID;
@@ -59,6 +66,8 @@ public class CreateContactAcitivity extends Activity {
         Contact person = new Contact(personID, name, email,businessNumber,primaryBusiness,address,province);
 
         appState.firebaseReference.child(personID).setValue(person);
+
+
         finish();
 
     }

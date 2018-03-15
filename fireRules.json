@@ -2,29 +2,31 @@
   "rules": {
     ".read": "true",
     ".write": "true",
-    "contacts": {
-            ".write": "newData.hasChildren(['Business Number','name', 'email','Primary Business'])",
-            "$contact": {
-                "name": {
-                    ".validate": "newData.isString() && newData.val().length < 50"
-                },
-                "email": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
-                },
-              "Business Number":{
-                ".validate":"newData.isNumber() && (newData.val()<1000000000 && newData.val()>99999999)"
-              },
-              "Primary Business":{
-                ".validate":"newData.isString()&&newData.val().matches(/^Fisher/)||newData.val().matches(/^Distributor/)||newData.val().matches(/^Processor/)||newData.val().matches(/^Fish Monger/)"
-              },
-              "Address:":{
-                ".validate":"newData.isString() && newData.val().length < 50"
-              },
-              "Province":{
-                ".validate":"newData.isString() && (newData.val()=='AB'||newData.val()=='BC'||newData.val()=='MB'||newData.val()=='NB'||newData.val()=='NL'||newData.val()=='NS'||newData.val()=='NT'||newData.val()=='NU'||newData.val()=='ON'||newData.val()=='PE'||newData.val()=='QC'||newData.val()=='SK'||newData.val()=='YT'||newData.val()==' ')"
-              }
+    "$contacts": {
+      "$uid": {
+        ".write": "newData.hasChildren(['name', 'email','businessNumber:','primaryBusiness:'])",
 
-            }
+        "name": {
+          ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 48"
+        },
+        "email": {
+          ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
+        },
+        "businessnumber":{
+          ".validate":"newData.isNumber() && (newData.val()<1000000000 && newData.val()>99999999)"
+        },
+        "primarybusiness":{
+          ".validate":"newData.isString() && (newData.val()=='Fisher'||newData.val()=='Distributor'||newData.val()=='Processor'||newData.val()=='Fish Monger')"
+        },
+        "address":{
+          ".validate":"newData.isString() && newData.val().length < 50"
+        },
+        "province":{
+          ".validate":"newData.isString() && (newData.val()=='AB'||newData.val()=='BC'||newData.val()=='MB'||newData.val()=='NB'||newData.val()=='NL'||newData.val()=='NS'||newData.val()=='NT'||newData.val()=='NU'||newData.val()=='ON'||newData.val()=='PE'||newData.val()=='QC'||newData.val()=='SK'||newData.val()=='YT'||newData.val()==' ')"
         }
+      }
+
+
+    }
   }
 }
